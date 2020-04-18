@@ -35,3 +35,4 @@ for (var i = 0; i <= 10; i++) db.exampleCollection.insert( { x : i } )
 If your replica set is configured properly, the data should be present on your secondary members as well as the primary. To test this, connect to the mongo shell with the administrative user on one of your secondary members, and run the command
 db.getMongo().setSlaveOk()
 
+kill the primary node.Afte that when you connect to the secondary node it acts like primary and the data we have inserted through primary will be available in secondary node.
