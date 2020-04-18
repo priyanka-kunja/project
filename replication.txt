@@ -1,1 +1,22 @@
-replication mongodb commands
+Start the MongoDB server by specifying -- replSet option.
+mongod --port 27017 --dbpath "D:\set up\mongodb\data" --replSet rs0
+
+In Mongo client, issue the command rs.initiate() to initiate a new replica set.
+rs.initiate()
+
+To check the replica set configuration, issue the command
+rs.conf()
+
+To check the status of replica set issue the command 
+rs.status()
+
+To add Other hosts to Replica set use
+rs.add(mongo-repl-2)
+
+now in primary node make the changes or write new data into the database 
+use exampleDB
+for (var i = 0; i <= 10; i++) db.exampleCollection.insert( { x : i } )
+
+If your replica set is configured properly, the data should be present on your secondary members as well as the primary. To test this, connect to the mongo shell with the administrative user on one of your secondary members, and run the command
+db.getMongo().setSlaveOk()
+
