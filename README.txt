@@ -1,3 +1,4 @@
+          Replication   in MongoDB
 Start the MongoDB server by specifying -- replSet option.
 mongod --replSet priya --logpath "1.log" --dbpath "H:\rs0" --port 27017
 mongod --replSet priya --logpath "2.log" --dbpath "H:\rs1" --port 27018
